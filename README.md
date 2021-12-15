@@ -1,15 +1,14 @@
 ## SDSS Computing Studies Python Assignment
-### Assignment #104 Algorithms
+### Assignment #100F Tic Tac Toe
 
-There are many problems are solved simply by repetition or using math.  These may require the use of while loops, for loops, or cycling through lists multiple times to solve the problem. 
-
+These are all problems related to playing the basic game of tic tac toe
 
 ##### Problem 1
-NEXT!
+Store Data
 
 ##### Problem 2
-Necklace Sequence
+Display Game Board
 
 ##### Problem 3
-Convert to binary
+Determine Winner
 
