@@ -3,10 +3,8 @@
 """ 
 Create a reliable method for storing and retrieving data for the game.
 """
-
-def read(square,board):
-  """
-  This will do a lookup to find out what is in a particular square
+"""
+This will do a lookup to find out what is in a particular square
   inputs: 
   list board : list of the squares in the board
     7 | 8 | 9
@@ -18,7 +16,17 @@ def read(square,board):
   the str value corresponding to the content of the square being checked
   None if the square is empty
   """
-  return None
+
+def read(square,board):
+  blankBoard = [1,2,3,4,5,6,7,8,9]
+  for square in range(1,9):
+        if (board[square] == 'O' or board[square] == 'X'):
+            blankBoard = blankBoard.replace(str(square), board[square])
+        else:
+            blankBoard = blankBoard.replace(str(square), ' ')
+  return blankBoard
+
+
 
 def write(square,board,player):
   """
