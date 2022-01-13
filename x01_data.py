@@ -16,15 +16,14 @@ This will do a lookup to find out what is in a particular square
   the str value corresponding to the content of the square being checked
   None if the square is empty
   """
-
 def read(square,board):
-  blankBoard = [1,2,3,4,5,6,7,8,9]
-  for square in range(1,9):
-        if (board[square] == 'O' or board[square] == 'X'):
-            blankBoard = blankBoard.replace(str(square), board[square])
-        else:
-            blankBoard = blankBoard.replace(str(square), ' ')
-  return blankBoard
+  square -= 1
+  if "O" in board[square]:
+    return "O"
+  elif "X" in board[square]:
+    return "X"
+  else:
+   return None
 
 
 
@@ -42,7 +41,6 @@ def write(square,board,player):
   empty.  If the square is not empty, it should not change the gameboard and
   should return the original, unchanged gameboard data
   """
-  
   return None
 
 def mainRead():
