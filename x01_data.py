@@ -28,9 +28,8 @@ def read(square,board):
 
 def write(square,board,player):
   if 0 in board[square]:
-    x = board.index(square)
-    board.pop(x)
-    board.insert(x,player)
+    board.pop(square)
+    board.insert(square,player)
     return board
   elif 'O' in board[square]:
     return (board , "spot occupied")
