@@ -17,17 +17,46 @@ This will do a lookup to find out what is in a particular square
   None if the square is empty
   """
 def read(square,board):
-  square -= 1
-  if "O" in board[square]:
-    return "O"
-  elif "X" in board[square]:
-    return "X"
+  if 'O' in board[square]:
+    return 'O'
+  elif 'X' in board[square]:
+    return 'X'
   else:
-   return None
+    return None
 
 
 
 def write(square,board,player):
+
+  if 'O' in board[square]:
+    return board
+  elif 'X' in board[square]:
+    return board
+  if 0 in board[square]:
+    board.remove(square)
+    board.insert(player,square)
+    return board
+
+def mainRead():
+  board = [ 0, 'X', 0, 'X', 'O', 'O', 0 , 0, 0]
+  assert read(2,board) == None
+  assert read(1,board) == 'X'
+  assert read(4,board) == 'O'
+
+def mainWrite():
+  board = [ 0,0,0,0,0,0,0,0,0,0]
+  assert write(0,board,'X') == [ 'X',0,0,0,0,0,0,0,0,0]
+  assert write(4,board,'O') == [ 'X',0,0,0,'O',0,0,0,0,0]
+  #next command should not do anything because square #5 is already occupied by an 'O'
+  assert write(4,board,'X') == [ 'X',0,0,0,'O',0,0,0,0,0]
+ 
+  
+  
+if __name__ == "__main__" :
+  mainRead()
+  mainWrite()
+
+
   """
   inputs:
   int square : the square you are checking for an X or an O
@@ -41,23 +70,3 @@ def write(square,board,player):
   empty.  If the square is not empty, it should not change the gameboard and
   should return the original, unchanged gameboard data
   """
-  return None
-
-def mainRead():
-  board = [ 0, 'X', 0, 'X', 'O', 'O', 0 , 0, 0]
-  assert read(3,board) == None
-  assert read(2,board) == 'X'
-  assert read(5,board) == 'O'
-
-def mainWrite():
-  board = [ 0,0,0,0,0,0,0,0,0,0]
-  assert write(1,board,'X') == [ 'X',0,0,0,0,0,0,0,0,0]
-  assert write(5,board,'O') == [ 'X',0,0,0,'O',0,0,0,0,0]
-  #next command should not do anything because square #5 is already occupied by an 'O'
-  assert write(5,board,'X') == [ 'X',0,0,0,'O',0,0,0,0,0]
- 
-  
-  
-if __name__ == "__main__" :
-  mainRead()
-  mainWrite()
