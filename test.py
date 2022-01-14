@@ -3,7 +3,7 @@
 
 
 def write(square,board,player):
-  if '0' in board[square]:
+  if 0 in board[square]:
     x = board.index(square)
     board.pop(x)
     board.insert(x,player)
@@ -18,5 +18,5 @@ def write(square,board,player):
     board.insert(x,player)
     return board
 
-board = [ '0', 'X', '0', 'X', 'O', 'O', '0' , '0','0']
-print(write(1,board,'O'))
+board = [ 0, 'X', 0, 'X', 'O', 'O', 0 , 0, 0]
+print(write(3,board,'O'))
