@@ -1,6 +1,22 @@
 #!python3
 
 def displayString(board):
+  kill = 0
+  print(board)
+  if kill in board:
+    print(board)
+    for i in board:
+      print(board)
+      x = board.index(kill)
+      board.pop(x)
+      board.insert(x,'-')
+      if kill not in board:
+        break
+  fboard = "\n".join(board)
+  return fboard
+
+
+
   """
   function should create a string that can be displayed using a print command
   this function should have no actual print commands in it
@@ -21,7 +37,6 @@ def displayString(board):
   return value
   str the gameboard
   """
-  return None
 
 def main():
   board = [ 'O' , 0 , 0 , 'X' , 'O' , 0 , 0 , 0 , 'X' ] 
