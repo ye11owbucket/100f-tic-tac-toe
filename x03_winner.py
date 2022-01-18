@@ -12,10 +12,14 @@ None if there is no winner
 """
 
 def whoWins(board):
-  
-  
-  
-  return None
+  count = 0
+  if 'X' == board[0]:
+    if 'X' == board[1]:
+      if 'X' == board[2]:
+        return 'X'
+  count + 1
+  if count == 9:
+    return None
 
 
 def main():

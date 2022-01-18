@@ -17,24 +17,22 @@ This will do a lookup to find out what is in a particular square
   None if the square is empty
   """
 def read(square,board):
-  if 'O' in board[square]:
+  if 'O' == board[square]:
     return 'O'
-  elif 'X' in board[square]:
+  elif 'X' == board[square]:
     return 'X'
   else:
     return None
 
-
-
 def write(square,board,player):
-  if 0 in board[square]:
+  if 0 == board[square]:
     board.pop(square)
     board.insert(square,player)
     return board
-  elif 'O' in board[square]:
-    return (board , "spot occupied")
-  elif 'X' in board[square]:
-    return (board , "spot occupied")
+  elif 'O' == board[square]:
+    return board
+  elif 'X' == board[square]:
+    return board
 
 def mainRead():
   board = [ 0, 'X', 0, 'X', 'O', 'O', 0 , 0, 0]
