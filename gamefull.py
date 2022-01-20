@@ -1,6 +1,7 @@
 from x01_data import *
 from x02_display import *
 from x03_winner import *
+from test import *
 
 def tictact0e():
     board = [0,0,0,0,0,0,0,0,0]
@@ -12,10 +13,10 @@ def tictact0e():
         if a == 'b':
             print(displayString(board))
         if a == 'i':
-            square = input(str('enter position:'))
+            square = input('enter position:')
             player = input(str('enter X or O:'))
-            write(player,board,square)
+            write(square,board,player) 
             return board
         
-tictact0e()
+print(tictact0e())
     
