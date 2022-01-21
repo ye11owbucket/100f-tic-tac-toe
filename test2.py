@@ -53,3 +53,12 @@ def whoWins(board):
 
 board = [ 'O','O','O',0,'X',0,'O','O','X']
 print(whoWins(board))
+exit()
+kill = 0
+if kill in board:
+      for i in board:
+        x = board.index(kill)
+        board.pop(x)
+        board.insert(x,'-')
+        if kill not in board:
+          break

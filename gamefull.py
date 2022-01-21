@@ -18,14 +18,6 @@ def read(square,board):
     return None
 
 def whoWins(board):
-    kill = 0
-    if kill in board:
-      for i in board:
-        x = board.index(kill)
-        board.pop(x)
-        board.insert(x,'-')
-        if kill not in board:
-          break
     a = board[0]
     b = board[1]
     c = board[2]
@@ -74,25 +66,29 @@ def whoWins(board):
 
 
 def tictact0e():
-    board = [0,0,0,0,0,0,0,0,0]
-    kill = 0
-    if kill in board:
-      for i in board:
-        x = board.index(kill)
-        board.pop(x)
-        board.insert(x,'-')
-        if kill not in board:
-          break
+    board = ['-','-','-','-','-','-','-','-','-']
     while True:
-        choice = input('yuh: ')
-        if choice == 'read':
-            player = input("player")
-            square = input("square")
+        choice = input(': ')
+        if choice == 'r':
+            square = int(input("square"))
             print(read(square,board))
-        if choice == 'write':
+        if choice == 'w':
             player = input("player")
-            square = input("square")
-            print(write(square,board,player))
+            square = int(input("square"))
+            write(square,board,player)
+        if choice == 'c':
+            winner = whoWins(board)
+            if winner == 'X':
+                print('X has won!')
+                break
+            if winner =='O':
+                print('O has won!')
+                break
+            else:
+                print('nobody has won yet :(')
+        if choice == 'p':
+            print(board)
+
  
 
 tictact0e()
