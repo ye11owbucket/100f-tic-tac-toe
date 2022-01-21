@@ -17,7 +17,7 @@ This will do a lookup to find out what is in a particular square
   None if the square is empty
   """
 def read(square,board):
-  if 'O' == board[square]:
+  if board[square] == 'O':
     return 'O'
   elif 'X' == board[square]:
     return 'X'
@@ -25,7 +25,7 @@ def read(square,board):
     return None
 
 def write(square,board,player):
-  if 0 == board[square]:
+  if board[square] == 0:
     board.pop(square)
     board.insert(square,player)
     return board

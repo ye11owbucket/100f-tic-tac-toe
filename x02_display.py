@@ -9,14 +9,8 @@ def displayString(board):
       board.insert(x,'-')
       if kill not in board:
         break
-  board.insert(1, " ")
-  board.insert(3, " ")
-  board.insert(5, "\n")
-  board.insert(7, " ")
-  board.insert(9, " ")
-  board.insert(11, "\n")
-  board.insert(13, " ")
-  board.insert(15, " ")
+  board.insert(3, "\n")
+  board.insert(7, "\n")
   fboard = ''.join(board)
   return fboard
 
@@ -28,3 +22,4 @@ def main():
 
 if __name__ == "__main__":
   main()
+
