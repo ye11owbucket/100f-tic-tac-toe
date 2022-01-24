@@ -68,6 +68,7 @@ def whoWins(board):
 def tictact0e():
     board = ['-','-','-','-','-','-','-','-','-']
     while True:
+        print('r to read\nw to write\nc to check if win')
         choice = input(': ')
         if choice == 'r':
             square = int(input("square"))
